@@ -1,0 +1,120 @@
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apto Cana Online (Registro de Cana Online)</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="CanaOnline.Css">
+  </head>
+  
+  <body>
+  
+ <div  
+ <div class="container">
+  
+  
+<center> <img src="colh_site-removebg-preview.png" alt="trator"></center>
+</div>
+
+    <form action="index.html" method="post">
+  
+      
+        
+        
+      <h1>Apto. Cana Online </h1>
+      <h3>Insira os dados no coletor</h3>
+      <fieldset>
+        <legend><span class="number">1</span> Informação Basica</legend>
+        <input id="date" type="date" />
+        </br>
+        <label for="number">Nº do Caminhão:</label>
+        <input formControlName="sGPTypeDeliveryId" placeholder="Digite apenas números" class="form-control" required="required" type="number" step="1" />
+        <br>
+        <label for="number">Nº Semi-Reboque:</label>
+        <input formControlName="sGPTypeDeliveryId" placeholder="Digite apenas números" class="form-control" required="required" type="number" step="1" />
+        <label for="number">Nº do Reboque:</label>
+        <input formControlName="sGPTypeDeliveryId" placeholder="Digite apenas números" class="form-control" required="required" type="number" step="1" />
+        </br>
+        <label for="number">O.S.:</label>
+        <input formControlName="sGPTypeDeliveryId" placeholder="Digite apenas números" class="form-control" required="required" type="number" step="1" />
+        <label for="number">Cartão Lib.:</label>
+        <input formControlName="sGPTypeDeliveryId" placeholder="Digite apenas números" class="form-control" required="required" type="number" step="1" />
+        </br>
+        <label for="number">Faz/Lote:</label>
+        <input formControlName="sGPTypeDeliveryId" placeholder="Digite apenas números" class="form-control" required="required" type="number" step="1" />
+        </br>
+        <label for="number">Nº do Transbordo 1:</label>
+        <input formControlName="sGPTypeDeliveryId" placeholder="Digite apenas números" class="form-control" required="required" type="number" step="1" />
+       
+        <label for="Equipamentos">Equipamento 1:</label>
+        <select id="Equipamentos" name="Eequipamento1">
+          <optgroup label="Equipamento">
+            <option value="Equipamento1">EP 1</option>
+            <option value="Equipamento2">EP 2</option>
+            <option value="Equipamento3">EP 3</option>
+            <option value="Equipamento4">EP 4</option>
+            <option value="Equipamento5">EP 5 </option>
+            <option value="Equipamento6">EP 6 </option>
+          </optgroup>
+        </select>
+        </BR>
+        <label for="number">ID Operador:</label>
+        <input formControlName="sGPTypeDeliveryId" placeholder="Digite apenas números" class="form-control" required="required" type="number" step="1" />
+        <label for="Equipamentos">Nome do Operador 1:</label>
+        <select id="Equipamentos" name="operador1">
+          <optgroup label="Equipamento">
+            <option value="Equipamento1">OP 1</option>
+            <option value="Equipamento2">OP 2</option>
+          </optgroup>
+        </select>
+        <label for="Equipamentos">Transbordo 2:</label>
+        <select id="Equipamentos" name="equipamento2">
+          <optgroup label="Equipamento">
+            <option value="Equipamento1">EP 1</option>
+            <option value="Equipamento2">EP 2</option>
+          </optgroup>
+        </select>
+        </br>
+        <label for="number">ID Operador:</label>
+        <input formControlName="sGPTypeDeliveryId" placeholder="Digite apenas números" class="form-control" required="required" type="number" step="1" />
+        <label for="Equipamentos">Nome do Operador 2:</label>
+        <select id="Equipamentos" name="operador2">
+          <optgroup label="Equipamento">
+            <option value="Equipamento1">OP 1</option>
+            <option value="Equipamento2">OP 2</option>
+          </optgroup>
+        </select>
+          </br>
+      </fieldset>
+      <fieldset>
+        <legend><span class="number">2</span></legend>
+        <h1>Visualização da Digitação</h1>
+        <label for="bio">Dados Registrados:</label>
+        <textarea id="bio" name="user_bio"></textarea>
+      </fieldset>
+      <fieldset>
+        <label for="turno">Turno da Colheita:</label>
+        <select id="turno" name="turno">
+          <optgroup label="turno">
+            <option value="frontend_developer">Diurno</option>
+            <option value="php_developor">Noturno</option>
+          </optgroup>
+        </select>
+        </br>
+        <label for="bio">OBS.:</label>
+        <textarea id="bio" name="user_bio"></textarea>
+        <label for="appt">Hora da Finalização:</label> 
+          <input type="time" id="appt" name="appt" min="09:00" max="18:00" required />
+          </br>
+      </fieldset>
+      <button type="submit">Enviar Registro</button>
+  
+    </form>
+    <form action="registros.html" method="post">
+      
+     </form>
+  
+  
+  </body>
+  
+  </html>

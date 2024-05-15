@@ -14,3 +14,26 @@ Tela de Cadastro de Equipamentos.
 
 ![image](https://github.com/ClaudionorPeixinho/CanaOnline/assets/142553468/2f347e5b-f1d3-42e7-a729-d833c1ddd19b)
 
+
+Tela com os Dados Salvo no Banco MysqlWorkbench - Visto pelo Editor : VS CODE:
+
+![Apto_BancoDados Equipamentos](https://github.com/ClaudionorPeixinho/CanaOnline/assets/142553468/9a0b1213-f8d3-4e18-aac1-f16db0715a96)
+
+![Apto_BancoDados Colaboradores](https://github.com/ClaudionorPeixinho/CanaOnline/assets/142553468/f0daec6b-82b3-4f24-bd7c-7bf94dd45b6e)
+
+![Apto_BancoDados Apontamentos](https://github.com/ClaudionorPeixinho/CanaOnline/assets/142553468/074366af-2b7a-4f1f-a7eb-dd21c40eea6a)
+
+
+Tela com os Dados Salvo no Banco MysqlWorkbench - utilizando o XAMPP
+
+![Workbench Tela Apontamento](https://github.com/ClaudionorPeixinho/CanaOnline/assets/142553468/30fc1d3e-a0b6-4a0c-b7b2-362a820ec2c6)
+
+![Workbench Tela Colaborador](https://github.com/ClaudionorPeixinho/CanaOnline/assets/142553468/b0ae3fb9-a7b1-4176-80e8-f9f37f5bd046)
+
+![Workbench Tela Equipamentos](https://github.com/ClaudionorPeixinho/CanaOnline/assets/142553468/e05bf9bb-0a27-46ba-8f68-1be75a1ff6ae)
+
+
+
+
+
+

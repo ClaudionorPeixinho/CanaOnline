@@ -10,18 +10,12 @@ Tela de Cadastro de Colaboradores.
 ![image](https://github.com/ClaudionorPeixinho/CanaOnline/assets/142553468/56b63386-cb3b-4d4d-ac9e-cf8a30fe62ed)
 
 
+
+
 Tela de Cadastro de Equipamentos.
 
 ![image](https://github.com/ClaudionorPeixinho/CanaOnline/assets/142553468/2f347e5b-f1d3-42e7-a729-d833c1ddd19b)
 
-
-Tela com os Dados Salvo no Banco MysqlWorkbench - Visto pelo Editor : VS CODE:
-
-![Apto_BancoDados Equipamentos](https://github.com/ClaudionorPeixinho/CanaOnline/assets/142553468/9a0b1213-f8d3-4e18-aac1-f16db0715a96)
-
-![Apto_BancoDados Colaboradores](https://github.com/ClaudionorPeixinho/CanaOnline/assets/142553468/f0daec6b-82b3-4f24-bd7c-7bf94dd45b6e)
-
-![Apto_BancoDados Apontamentos](https://github.com/ClaudionorPeixinho/CanaOnline/assets/142553468/074366af-2b7a-4f1f-a7eb-dd21c40eea6a)
 
 
 Tela com os Dados Salvo no Banco MysqlWorkbench - utilizando o XAMPP

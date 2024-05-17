@@ -10,8 +10,6 @@ Tela de Cadastro de Colaboradores.
 ![image](https://github.com/ClaudionorPeixinho/CanaOnline/assets/142553468/56b63386-cb3b-4d4d-ac9e-cf8a30fe62ed)
 
 
-
-
 Tela de Cadastro de Equipamentos.
 
 ![image](https://github.com/ClaudionorPeixinho/CanaOnline/assets/142553468/2f347e5b-f1d3-42e7-a729-d833c1ddd19b)

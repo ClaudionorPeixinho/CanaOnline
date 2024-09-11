@@ -1,6 +1,6 @@
 # Cana_Online
 
-Novo tela de aplicação
+Nova tela de aplicação , com novo design mais moderno
 
 
 Tela de Apontamentos de Produção.

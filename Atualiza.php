@@ -1,6 +1,7 @@
 <?php
 if($_SERVER['REQUEST_METHOD']==='POST'){
-$conexao = new mysqli('localhost','root','','canaonline');
+// Use centralized database connection
+$conexao = require_once 'conexao.php';
 
 $id = $_POST['id'];
 $matricula = $_POST['matricula'];
@@ -10,14 +11,19 @@ $telefone = $_POST['telefone'];
 $apelido = $_POST['apelido'];
 $turno = $_POST['turno'];
 
-$sql = "UPDATE cad_colaborador SET matricula = '$matricula',
-nome = '$nome',
-funcao = '$funcao',
-telefone = '$telefone',
-apelido = '$apelido',
-turno = '$turno' where id=$id";
+// Use prepared statement to prevent SQL injection
+$sql = "UPDATE cad_colaborador SET
+    matricula = ?,
+    nome = ?,
+    funcao = ?,
+    telefone = ?,
+    apelido = ?,
+    turno = ?
+    WHERE id = ?";
 
-$resultado = $conexao ->query($sql);
+$stmt = mysqli_prepare($conexao, $sql);
+mysqli_stmt_bind_param($stmt, 'ssssssi', $matricula, $nome, $funcao, $telefone, $apelido, $turno, $id);
+$resultado = mysqli_stmt_execute($stmt);
 
 if($resultado){
   echo "<hr>";

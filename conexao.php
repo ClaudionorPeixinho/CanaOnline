@@ -1,16 +1,30 @@
-
 <?php
+/**
+ * Database Connection File
+ * 
+ * This file handles the database connection using credentials from the config file.
+ * It provides a centralized connection that can be included in other files.
+ */
 
-$servidor = "localhost";
-$usuario= "root";
-$senha = "";
-$dbname = "canaonline";
+// Load the database configuration
+$db_config = require_once __DIR__ . '/config/db_config.php';
 
-// criar a conexão
+// Create the connection
+$conn = mysqli_connect(
+    $db_config['host'], 
+    $db_config['user'], 
+    $db_config['pass'], 
+    $db_config['name']
+);
 
-$conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
-if ($mysqli->connect_errno) {
-    echo "falha ao conectar: (" . $mysqli->connect_errno. ")" . $mysqli->connect_errno;
-
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
 }
 
+// For backward compatibility with existing code
+$mysqli = $conn;
+
+// Return the connection
+return $conn;
+?>

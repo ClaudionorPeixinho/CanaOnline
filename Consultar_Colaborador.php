@@ -101,13 +101,24 @@
     <a href="Consultar_Equipamentos.php">Pesquisar Equipamentos</a>
 
     <?php
-    $conexao = mysqli_connect('localhost', 'root', '', 'canaonline');
+    // Use centralized database connection
+    $conexao = require_once 'conexao.php';
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $pesquisar = $_POST['pesquisar'];
 
+        // Use prepared statement to prevent SQL injection
+        $sql = "SELECT * FROM cad_colaborador WHERE nome LIKE ?";
+        $stmt = mysqli_prepare($conexao, $sql);
 
-        $sql = "SELECT * FROM cad_colaborador where nome like '%$pesquisar%'";
-        $query = mysqli_query($conexao, $sql);
+        // Bind parameter with wildcards
+        $search_term = '%' . $pesquisar . '%';
+        mysqli_stmt_bind_param($stmt, 's', $search_term);
+
+        // Execute the statement
+        mysqli_stmt_execute($stmt);
+
+        // Get the result
+        $query = mysqli_stmt_get_result($stmt);
         $registro = mysqli_num_rows($query);
 
         echo '<h1>';

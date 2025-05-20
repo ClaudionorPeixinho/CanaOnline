@@ -103,10 +103,14 @@
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $pesquisar = $_POST['pesquisar'];
 
-
-        $sql = "SELECT * FROM pontodigital where nome like '%$pesquisar%'";
-        $query = mysqli_query($conexao, $sql);
-        $registro = mysqli_num_rows($query);
+        // Use prepared statement to prevent SQL injection
+        $sql = "SELECT * FROM pontodigital WHERE nome LIKE ?";
+        $stmt = mysqli_prepare($conexao, $sql);
+        $searchParam = '%' . $pesquisar . '%';
+        mysqli_stmt_bind_param($stmt, 's', $searchParam);
+        mysqli_stmt_execute($stmt);
+        $result = mysqli_stmt_get_result($stmt);
+        $registro = mysqli_num_rows($result);
 
         echo '<h1>';
 
@@ -120,12 +124,12 @@
          <th>KM inicial:</th><th>Km Final:</th><th>Fazenda Lote:</th><th>Turno:</th>
         <th>Lider:</th><th>Informações:</th><th>Editar:</th><th>Excluir:</th>';
 
-        while ($dados = mysqli_fetch_assoc($query)) {
+        while ($dados = mysqli_fetch_assoc($result)) {
 
             $Id = $dados['id'];
             $Data_lancamento = $dados['data_lancamento'];
-            $inicio_Jornada = $dados['hi_jornada'];
-            $Fim_Jornada= $dados['hf_jornada'];
+            $Inicio_Jornada = $dados['hi_jornada'];
+            $Fim_Jornada = $dados['hf_jornada'];
             $Colaborador = $dados['colaborador'];
             $Matricula = $dados['matricula'];
             $Funcao = $dados['funcao'];
@@ -139,7 +143,7 @@
 
 
 
-            echo '<tr><td>' . $Id . '</td><td>' . $Data_lancamento . '</td><td>' . $Inicio_Jornada . '</td><td>' . $Fim_jornada .
+            echo '<tr><td>' . $Id . '</td><td>' . $Data_lancamento . '</td><td>' . $Inicio_Jornada . '</td><td>' . $Fim_Jornada .
                 '</td><td>' . $Colaborador . '</td><td>' . $Matricula . '</td><td>'. $Funcao . '</td><td>'. $Frota 
                 . '</td><td>' . $Km_inicial . '</td><td>'. $Km_final . '</td><td>'                  
                     . $Fazenda_Lote . '</td><td>'. $Turno . '</td><td>'. $Lider . '</td><td>' . $Informacao . '</td>

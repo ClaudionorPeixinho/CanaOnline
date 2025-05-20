@@ -97,10 +97,14 @@ $conexao = mysqli_connect('localhost','root','','canaonline');
 if($_SERVER['REQUEST_METHOD']==='POST'){
 $pesquisar = $_POST['pesquisar'];
 
-
-$sql = "SELECT * FROM cad_equipamentos where frota like '%$pesquisar%'";
-$query = mysqli_query($conexao,$sql);
-$registro = mysqli_num_rows($query);
+// Use prepared statement to prevent SQL injection
+$sql = "SELECT * FROM cad_equipamentos WHERE frota LIKE ?";
+$stmt = mysqli_prepare($conexao, $sql);
+$searchParam = '%' . $pesquisar . '%';
+mysqli_stmt_bind_param($stmt, 's', $searchParam);
+mysqli_stmt_execute($stmt);
+$result = mysqli_stmt_get_result($stmt);
+$registro = mysqli_num_rows($result);
 
 echo'<h1>';
 
@@ -112,7 +116,7 @@ echo '<table>';
 echo '<tr><th>id:</th><th>Frotas:</th><th>Modelo:</th><th>Tipo_operação:</th><th>Tag:</th><th>Categoria:</th>
 <th>Editar:</th><th>Excluir:</th>';
 
-while($dados = mysqli_fetch_assoc($query)){
+while($dados = mysqli_fetch_assoc($result)){
 
 $id = $dados['id'];
 $Frota = $dados['frota'];
